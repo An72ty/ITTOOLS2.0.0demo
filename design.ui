@@ -6,16 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1225</width>
-    <height>815</height>
+    <width>820</width>
+    <height>545</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ITTOOLS</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -26,8 +25,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>413</width>
-      <height>815</height>
+      <width>275</width>
+      <height>545</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -45,7 +44,7 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>381</width>
+       <width>251</width>
        <height>61</height>
       </rect>
      </property>
@@ -55,7 +54,7 @@ color: white;
 </string>
      </property>
      <property name="text">
-      <string>ITTOOLS 2.0.0</string>
+      <string>ITTOOLS</string>
      </property>
     </widget>
     <widget class="QPushButton" name="ShowPluginsBtn">
@@ -139,7 +138,7 @@ QPushButton::hover {
       <rect>
        <x>0</x>
        <y>280</y>
-       <width>411</width>
+       <width>401</width>
        <height>61</height>
       </rect>
      </property>
@@ -177,7 +176,7 @@ QPushButton::hover {
       <rect>
        <x>0</x>
        <y>340</y>
-       <width>411</width>
+       <width>401</width>
        <height>61</height>
       </rect>
      </property>
@@ -214,8 +213,8 @@ QPushButton::hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>720</y>
-       <width>411</width>
+       <y>480</y>
+       <width>381</width>
        <height>61</height>
       </rect>
      </property>
@@ -252,10 +251,10 @@ QPushButton::hover {
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>270</x>
       <y>0</y>
-      <width>816</width>
-      <height>815</height>
+      <width>545</width>
+      <height>545</height>
      </rect>
     </property>
     <property name="styleSheet">
