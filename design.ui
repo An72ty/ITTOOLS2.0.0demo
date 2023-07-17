@@ -7,16 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>1225</width>
-    <height>814</height>
+    <height>815</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ITTOOLS</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">width: 1440px;
-height: 1024px;
-
+   <string notr="true">
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -58,6 +56,196 @@ color: white;
      </property>
      <property name="text">
       <string>ITTOOLS 2.0.0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ShowPluginsBtn">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font-size: 25px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Show plugins                     </string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ShowPluginsBtn_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>220</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font-size: 25px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Install plugin                      </string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-скачать-96.png</normaloff>../../../Aihop/WebIcons/icons8-скачать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ShowPluginsBtn_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>280</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font-size: 25px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Activate plugin                   </string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-естественный-интерфейс-пользователя-2-96.png</normaloff>../../../Aihop/WebIcons/icons8-естественный-интерфейс-пользователя-2-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ShowPluginsBtn_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>340</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font-size: 25px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Remove plugin                   </string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-удалить-96.png</normaloff>../../../Aihop/WebIcons/icons8-удалить-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ShowPluginsBtn_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>720</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font-size: 25px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Exit                                </string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-выход-96.png</normaloff>../../../Aihop/WebIcons/icons8-выход-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
      </property>
     </widget>
    </widget>
