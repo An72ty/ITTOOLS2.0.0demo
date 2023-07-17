@@ -39,7 +39,7 @@ QTableWidget {
 	background-color: rgb(102, 102, 102);
 	color: #ffffff;
 }
-QTableWidget:item {
+QTableWidget::item {
 	background-color: rgb(136, 136, 136);
 }
 </string>
