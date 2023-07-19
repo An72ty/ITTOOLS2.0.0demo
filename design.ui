@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>820</width>
-    <height>545</height>
+    <width>950</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,13 +20,13 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="left_menu_panel">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>275</width>
-      <height>545</height>
+      <width>311</width>
+      <height>650</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -39,32 +39,50 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="title">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>40</y>
+       <y>20</y>
        <width>251</width>
        <height>61</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 55px;
-color: white;
+      <string notr="true">color: white;
+font: 55px &quot;Verdana&quot;;
 </string>
      </property>
      <property name="text">
       <string>ITTOOLS</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="ShowPluginsBtn">
+    <widget class="QPushButton" name="show_plugins_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>160</y>
-       <width>411</width>
+       <width>451</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
@@ -73,7 +91,7 @@ color: white;
       <string notr="true">QPushButton {
 	border: 0px;
 	color: white;
-	font-size: 25px;
+	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
@@ -95,14 +113,23 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="ShowPluginsBtn_2">
+    <widget class="QPushButton" name="install_plugin_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>220</y>
-       <width>411</width>
+       <width>451</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
@@ -111,7 +138,7 @@ QPushButton::hover {
       <string notr="true">QPushButton {
 	border: 0px;
 	color: white;
-	font-size: 25px;
+	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
@@ -133,14 +160,23 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="ShowPluginsBtn_3">
+    <widget class="QPushButton" name="activate_plugin_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>280</y>
-       <width>401</width>
+       <width>441</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
@@ -149,7 +185,7 @@ QPushButton::hover {
       <string notr="true">QPushButton {
 	border: 0px;
 	color: white;
-	font-size: 25px;
+	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
@@ -171,14 +207,23 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="ShowPluginsBtn_4">
+    <widget class="QPushButton" name="remove_plugin_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>340</y>
-       <width>401</width>
+       <width>441</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
@@ -187,7 +232,7 @@ QPushButton::hover {
       <string notr="true">QPushButton {
 	border: 0px;
 	color: white;
-	font-size: 25px;
+	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
@@ -209,7 +254,7 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="ShowPluginsBtn_5">
+    <widget class="QPushButton" name="exit_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -217,6 +262,12 @@ QPushButton::hover {
        <width>381</width>
        <height>61</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
@@ -248,17 +299,18 @@ QPushButton::hover {
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame_2">
+   <widget class="QFrame" name="contet_panel">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>0</y>
-      <width>545</width>
-      <height>545</height>
+      <x>310</x>
+      <y>74</y>
+      <width>641</width>
+      <height>576</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #0d1117;
+font: 25px &quot;Verdana&quot;;
 </string>
     </property>
     <property name="frameShape">
@@ -268,8 +320,241 @@ QPushButton::hover {
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <zorder>frame_2</zorder>
-   <zorder>frame</zorder>
+   <widget class="QFrame" name="top_menu_panel">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>-7</y>
+      <width>641</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #0d1117;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="Line" name="border_line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>76</y>
+       <width>641</width>
+       <height>6</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>3</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="show_plugins_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>6</y>
+       <width>163</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Whats new?</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="show_plugins_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>163</x>
+       <y>6</y>
+       <width>163</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Eternal Arts</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="show_plugins_btn_4">
+     <property name="geometry">
+      <rect>
+       <x>326</x>
+       <y>6</y>
+       <width>104</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Credits</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="show_plugins_btn_5">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>6</y>
+       <width>84</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>About</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</normaloff>../../../Aihop/WebIcons/icons8-показать-96.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <zorder>contet_panel</zorder>
+   <zorder>left_menu_panel</zorder>
+   <zorder>top_menu_panel</zorder>
   </widget>
  </widget>
  <resources/>
