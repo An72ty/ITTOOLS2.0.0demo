@@ -398,12 +398,12 @@ font: 25px &quot;Verdana&quot;;
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: white;
+	color: #C2C2C2;
 	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
-	background-color: #5a6677;
+	color: white;
 }
 </string>
      </property>
@@ -441,13 +441,14 @@ QPushButton::hover {
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: white;
+	color: #C2C2C2;
 	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
-	background-color: #5a6677;
+	color: white;
 }
+
 </string>
      </property>
      <property name="text">
@@ -484,12 +485,12 @@ QPushButton::hover {
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: white;
+	color: #C2C2C2;
 	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
-	background-color: #5a6677;
+	color: white;
 }
 </string>
      </property>
@@ -527,12 +528,12 @@ QPushButton::hover {
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: white;
+	color: #C2C2C2;
 	font: 25px &quot;Verdana&quot;;
 }
 
 QPushButton::hover {
-	background-color: #5a6677;
+	color: white;
 }
 </string>
      </property>
@@ -550,9 +551,9 @@ QPushButton::hover {
      <property name="geometry">
       <rect>
        <x>590</x>
-       <y>6</y>
+       <y>15</y>
        <width>41</width>
-       <height>70</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
