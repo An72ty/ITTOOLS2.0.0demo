@@ -363,7 +363,7 @@ font: 25px &quot;Verdana&quot;;
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QPushButton" name="show_plugins_btn_2">
+    <widget class="QPushButton" name="whats_new_btn">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -410,7 +410,7 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="show_plugins_btn_3">
+    <widget class="QPushButton" name="eternal_arts_btn">
      <property name="geometry">
       <rect>
        <x>163</x>
@@ -457,7 +457,7 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="show_plugins_btn_4">
+    <widget class="QPushButton" name="credits_btn">
      <property name="geometry">
       <rect>
        <x>326</x>
@@ -504,7 +504,7 @@ QPushButton::hover {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="show_plugins_btn_5">
+    <widget class="QPushButton" name="about_btn">
      <property name="geometry">
       <rect>
        <x>430</x>
