@@ -782,6 +782,7 @@ QPushButton::hover {
 	border: 0px;
 	color: white;
 	font: 25px &quot;Verdana&quot;;
+	border-radius: 10px;
 }
 
 QPushButton::hover {

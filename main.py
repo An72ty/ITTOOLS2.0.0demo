@@ -27,16 +27,18 @@ BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
                                             border: 0px;
                                             color: white;
                                             font: 25px "Verdana";
+                                            border-radius: 10px;
                                             }
 
                                             QPushButton::hover {
-                                                background-color: #C2C2C2;
+                                                background-color: #5a6677;
                                             }
                                         """
 CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
                                             border: 0px;
                                             background-color: #18202c;
                                             font: 25px "Verdana";
+                                            border-radius: 10px;
                                             }
 
                                             QPushButton::hover {

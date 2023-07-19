@@ -366,6 +366,7 @@ class Ui_MainWindow(object):
 "    border: 0px;\n"
 "    color: white;\n"
 "    font: 25px \"Verdana\";\n"
+"    border-radius: 10px;\n"
 "}\n"
 "\n"
 "QPushButton::hover {\n"
