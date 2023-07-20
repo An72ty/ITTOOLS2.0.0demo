@@ -156,22 +156,12 @@ class MainWindow(Ui_MainWindow):
             self.show_install_plugin_dialog)
 
     def show_install_plugin_dialog(self):
-        Dialog = QtWidgets.QDialog()
-        dialog = install_plugin.Ui_Dialog()
-        dialog.setupUi(Dialog)
-
-        dialog.cancel.clicked.connect(Dialog.close)
-        # dialog.install.clicked.connect(self.install_plugin)
-        Dialog.exec_()
-
-    def install_plugin():
-        pass
+        dialog = install_plugin.Dialog()
+        dialog.Dialog.exec_()
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    # Set app icon
-    app.setWindowIcon(QtGui.QIcon('images/icons/ITTOOLSicon.ico'))
     window = MainWindow()
     window.MainWindow.show()
     sys.exit(app.exec_())
