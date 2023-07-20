@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from design import Ui_MainWindow
+from dialogs import install_plugin
 import sys
 
 
@@ -56,6 +57,7 @@ class MainWindow(Ui_MainWindow):
         ui.setupUi(self.MainWindow)
 
         self.add_functions_to_top_menu_panel_buttons()
+        self.add_functions_to_left_menu_panel_buttons()
 
     def add_functions_to_top_menu_panel_buttons(self):
         def show_whats_new_frame():
@@ -148,6 +150,22 @@ class MainWindow(Ui_MainWindow):
         self.credits_btn.clicked.connect(show_credits_frame)
         self.about_btn.clicked.connect(show_about_frame)
         self.settings_btn.clicked.connect(show_settings_frame)
+
+    def add_functions_to_left_menu_panel_buttons(self):
+        self.install_plugin_btn.clicked.connect(
+            self.show_install_plugin_dialog)
+
+    def show_install_plugin_dialog(self):
+        Dialog = QtWidgets.QDialog()
+        dialog = install_plugin.Ui_Dialog()
+        dialog.setupUi(Dialog)
+
+        dialog.cancel.clicked.connect(Dialog.close)
+        # dialog.install.clicked.connect(self.install_plugin)
+        Dialog.exec_()
+
+    def install_plugin():
+        pass
 
 
 if __name__ == "__main__":
