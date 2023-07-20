@@ -25,12 +25,11 @@
   <property name="windowTitle">
    <string>ITTOOLS</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>images/icons/ITTOOLS_icon.ico</normaloff>images/icons/ITTOOLS_icon.ico</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true"/>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -611,7 +610,7 @@ background-color: #131C30;</string>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: white;
+	color: #C2C2C2;
 	font: 25px &quot;Verdana&quot;;
 }
 
