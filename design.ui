@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>ITTOOLS</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/icons/ITTOOLS_icon.ico</normaloff>images/icons/ITTOOLS_icon.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
@@ -607,7 +611,7 @@ background-color: #131C30;</string>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	border: 0px;
-	color: #C2C2C2;
+	color: white;
 	font: 25px &quot;Verdana&quot;;
 }
 

@@ -17,6 +17,9 @@ class Ui_MainWindow(object):
         MainWindow.resize(950, 650)
         MainWindow.setMinimumSize(QtCore.QSize(950, 650))
         MainWindow.setMaximumSize(QtCore.QSize(950, 650))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("images/icons/ITTOOLS_icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("")
@@ -61,9 +64,9 @@ class Ui_MainWindow(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("images/icons/show.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.show_plugins_btn.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("images/icons/show.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.show_plugins_btn.setIcon(icon1)
         self.show_plugins_btn.setIconSize(QtCore.QSize(40, 40))
         self.show_plugins_btn.setObjectName("show_plugins_btn")
         self.install_plugin_btn = QtWidgets.QPushButton(self.left_menu_panel)
@@ -86,9 +89,9 @@ class Ui_MainWindow(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("images/icons/download.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.install_plugin_btn.setIcon(icon1)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("images/icons/download.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.install_plugin_btn.setIcon(icon2)
         self.install_plugin_btn.setIconSize(QtCore.QSize(40, 40))
         self.install_plugin_btn.setObjectName("install_plugin_btn")
         self.activate_plugin_btn = QtWidgets.QPushButton(self.left_menu_panel)
@@ -111,9 +114,9 @@ class Ui_MainWindow(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("images/icons/touch.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.activate_plugin_btn.setIcon(icon2)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("images/icons/touch.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.activate_plugin_btn.setIcon(icon3)
         self.activate_plugin_btn.setIconSize(QtCore.QSize(40, 40))
         self.activate_plugin_btn.setObjectName("activate_plugin_btn")
         self.remove_plugin_btn = QtWidgets.QPushButton(self.left_menu_panel)
@@ -136,9 +139,9 @@ class Ui_MainWindow(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("images/icons/remove.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.remove_plugin_btn.setIcon(icon3)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("images/icons/remove.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.remove_plugin_btn.setIcon(icon4)
         self.remove_plugin_btn.setIconSize(QtCore.QSize(40, 40))
         self.remove_plugin_btn.setObjectName("remove_plugin_btn")
         self.exit_btn = QtWidgets.QPushButton(self.left_menu_panel)
@@ -157,9 +160,9 @@ class Ui_MainWindow(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.exit_btn.setIcon(icon4)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn.setIcon(icon5)
         self.exit_btn.setIconSize(QtCore.QSize(40, 40))
         self.exit_btn.setObjectName("exit_btn")
         self.contet_panel = QtWidgets.QFrame(self.centralwidget)
@@ -275,7 +278,7 @@ class Ui_MainWindow(object):
         self.whats_new_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.whats_new_btn.setStyleSheet("QPushButton {\n"
 "    border: 0px;\n"
-"    color: #C2C2C2;\n"
+"    color: white;\n"
 "    font: 25px \"Verdana\";\n"
 "}\n"
 "\n"
@@ -374,9 +377,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.settings_btn.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("images/icons/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.settings_btn.setIcon(icon5)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("images/icons/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.settings_btn.setIcon(icon6)
         self.settings_btn.setIconSize(QtCore.QSize(40, 40))
         self.settings_btn.setObjectName("settings_btn")
         self.contet_panel.raise_()

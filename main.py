@@ -54,8 +54,6 @@ class MainWindow(Ui_MainWindow):
         self.MainWindow = QtWidgets.QMainWindow()
         ui = super()
         ui.setupUi(self.MainWindow)
-        # Set main window icon
-        self.MainWindow.setWindowIcon(QtGui.QIcon('images/icons/ITTOOLSicon.ico'))
 
         self.add_functions_to_top_menu_panel_buttons()
 
