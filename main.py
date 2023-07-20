@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5 import QtGui
 from design import Ui_MainWindow
 import sys
 
@@ -53,6 +54,8 @@ class MainWindow(Ui_MainWindow):
         self.MainWindow = QtWidgets.QMainWindow()
         ui = super()
         ui.setupUi(self.MainWindow)
+        # Set main window icon
+        self.MainWindow.setWindowIcon(QtGui.QIcon('images/icons/ITTOOLSicon.ico'))
 
         self.add_functions_to_top_menu_panel_buttons()
 
@@ -151,6 +154,8 @@ class MainWindow(Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+    # Set app icon
+    app.setWindowIcon(QtGui.QIcon('images/icons/ITTOOLSicon.ico'))
     window = MainWindow()
     window.MainWindow.show()
     sys.exit(app.exec_())
