@@ -33,7 +33,7 @@ font: 25px &quot;Verdana&quot;;
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel {
-	color: white;
+	color: #47525E;
 	font-size: 15px;
 }</string>
    </property>
@@ -138,7 +138,7 @@ QPushButton::hover {
      <x>20</x>
      <y>110</y>
      <width>191</width>
-     <height>31</height>
+     <height>35</height>
     </rect>
    </property>
    <property name="styleSheet">

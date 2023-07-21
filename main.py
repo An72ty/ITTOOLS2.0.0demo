@@ -71,11 +71,7 @@ class MainWindow(Ui_MainWindow):
             self.settings_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
-            self.whats_new_frame.show()
-            self.eternal_arts_frame.hide()
-            self.credits_frame.hide()
-            self.about_frame.hide()
-            self.settings_frame.hide()
+            self.whats_new_frame.raise_()
 
         def show_eternal_arts_frame():
             self.whats_new_btn.setStyleSheet(
@@ -88,11 +84,7 @@ class MainWindow(Ui_MainWindow):
             self.settings_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
-            self.whats_new_frame.hide()
-            self.eternal_arts_frame.show()
-            self.credits_frame.hide()
-            self.about_frame.hide()
-            self.settings_frame.hide()
+            self.eternal_arts_frame.raise_()
 
         def show_credits_frame():
             self.whats_new_btn.setStyleSheet(
@@ -105,11 +97,7 @@ class MainWindow(Ui_MainWindow):
             self.settings_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
-            self.whats_new_frame.hide()
-            self.eternal_arts_frame.hide()
-            self.credits_frame.show()
-            self.about_frame.hide()
-            self.settings_frame.hide()
+            self.credits_frame.raise_()
 
         def show_about_frame():
             self.whats_new_btn.setStyleSheet(
@@ -123,11 +111,7 @@ class MainWindow(Ui_MainWindow):
             self.settings_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
-            self.whats_new_frame.hide()
-            self.eternal_arts_frame.hide()
-            self.credits_frame.hide()
-            self.about_frame.show()
-            self.settings_frame.hide()
+            self.about_frame.raise_()
 
         def show_settings_frame():
             self.whats_new_btn.setStyleSheet(
@@ -139,11 +123,8 @@ class MainWindow(Ui_MainWindow):
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.settings_btn.setStyleSheet(
                 CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-            self.whats_new_frame.hide()
-            self.eternal_arts_frame.hide()
-            self.credits_frame.hide()
-            self.about_frame.hide()
-            self.settings_frame.show()
+
+            self.settings_frame.raise_()
 
         self.whats_new_btn.clicked.connect(show_whats_new_frame)
         self.eternal_arts_btn.clicked.connect(show_eternal_arts_frame)
@@ -152,12 +133,27 @@ class MainWindow(Ui_MainWindow):
         self.settings_btn.clicked.connect(show_settings_frame)
 
     def add_functions_to_left_menu_panel_buttons(self):
-        self.install_plugin_btn.clicked.connect(
-            self.show_install_plugin_dialog)
+        def show_show_plugins_frame():
+            self.set_base_stylesheet_to_top_menu_panel_buttons()
+            self.show_plugins_frame.raise_()
 
-    def show_install_plugin_dialog(self):
-        dialog = install_plugin.Dialog()
-        dialog.Dialog.exec_()
+        def show_install_plugin_dialog():
+            self.set_base_stylesheet_to_top_menu_panel_buttons()
+            dialog = install_plugin.Dialog()
+            dialog.Dialog.exec_()
+
+        self.show_plugins_btn.clicked.connect(show_show_plugins_frame)
+        self.install_plugin_btn.clicked.connect(show_install_plugin_dialog)
+        self.exit_btn.clicked.connect(self.MainWindow.close)
+
+    def set_base_stylesheet_to_top_menu_panel_buttons(self):
+        self.whats_new_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        self.eternal_arts_btn.setStyleSheet(
+            BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        self.credits_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        self.settings_btn.setStyleSheet(
+            BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
 
 if __name__ == "__main__":

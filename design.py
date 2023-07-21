@@ -21,6 +21,7 @@ class Ui_MainWindow(object):
         icon.addPixmap(QtGui.QPixmap("images/icons/ITTOOLS_icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("")
+        MainWindow.setAnimated(True)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
@@ -247,10 +248,59 @@ class Ui_MainWindow(object):
         self.any_settings.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.any_settings.setFrameShadow(QtWidgets.QFrame.Raised)
         self.any_settings.setObjectName("any_settings")
+        self.show_plugins_frame = QtWidgets.QFrame(self.contet_panel)
+        self.show_plugins_frame.setGeometry(QtCore.QRect(0, 0, 641, 576))
+        self.show_plugins_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.show_plugins_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.show_plugins_frame.setObjectName("show_plugins_frame")
+        self.frame_title = QtWidgets.QLabel(self.show_plugins_frame)
+        self.frame_title.setGeometry(QtCore.QRect(100, 10, 381, 31))
+        self.frame_title.setStyleSheet("color: #ffffff;")
+        self.frame_title.setObjectName("frame_title")
+        self.hint = QtWidgets.QLabel(self.show_plugins_frame)
+        self.hint.setGeometry(QtCore.QRect(80, 50, 431, 31))
+        self.hint.setStyleSheet("color: #47525E;")
+        self.hint.setObjectName("hint")
+        self.plugin_input = QtWidgets.QLineEdit(self.show_plugins_frame)
+        self.plugin_input.setGeometry(QtCore.QRect(130, 90, 260, 35))
+        self.plugin_input.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    font-size: 17px;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.plugin_input.setObjectName("plugin_input")
+        self.plugins = QtWidgets.QScrollArea(self.show_plugins_frame)
+        self.plugins.setGeometry(QtCore.QRect(9, 129, 621, 451))
+        self.plugins.setStyleSheet("border: 1px solid #47525E;")
+        self.plugins.setWidgetResizable(True)
+        self.plugins.setObjectName("plugins")
+        self.plugins_area_content = QtWidgets.QWidget()
+        self.plugins_area_content.setGeometry(QtCore.QRect(0, 0, 619, 449))
+        self.plugins_area_content.setObjectName("plugins_area_content")
+        self.plugins.setWidget(self.plugins_area_content)
+        self.install = QtWidgets.QPushButton(self.show_plugins_frame)
+        self.install.setGeometry(QtCore.QRect(400, 90, 35, 35))
+        self.install.setStyleSheet("QPushButton {\n"
+"    border: 0px;\n"
+"    color: white;\n"
+"    font: 25px \"Verdana\";\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    background-color: #5a6677;\n"
+"}\n"
+"")
+        self.install.setText("")
+        self.install.setIcon(icon2)
+        self.install.setIconSize(QtCore.QSize(30, 30))
+        self.install.setObjectName("install")
         self.credits_frame.raise_()
         self.about_frame.raise_()
         self.settings_frame.raise_()
         self.eternal_arts_frame.raise_()
+        self.show_plugins_frame.raise_()
         self.whats_new_frame.raise_()
         self.top_menu_panel = QtWidgets.QFrame(self.centralwidget)
         self.top_menu_panel.setGeometry(QtCore.QRect(310, -7, 641, 81))
@@ -400,6 +450,8 @@ class Ui_MainWindow(object):
         self.remove_plugin_btn.setText(_translate("MainWindow", "Remove plugin                   "))
         self.exit_btn.setText(_translate("MainWindow", "Exit                                "))
         self.label.setText(_translate("MainWindow", "We are working! :)"))
+        self.frame_title.setText(_translate("MainWindow", "No your plugin here? Install it!"))
+        self.hint.setText(_translate("MainWindow", "Write <devname>\\<pluginname>"))
         self.whats_new_btn.setText(_translate("MainWindow", "Whats new?"))
         self.eternal_arts_btn.setText(_translate("MainWindow", "Eternal Arts"))
         self.credits_btn.setText(_translate("MainWindow", "Credits"))

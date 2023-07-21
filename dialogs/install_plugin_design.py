@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'dialogs\install_plugin.ui'
+# Form implementation generated from reading ui file 'dialogs\install_plugin_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -24,7 +24,7 @@ class Ui_Dialog(object):
         self.hint = QtWidgets.QLabel(Dialog)
         self.hint.setGeometry(QtCore.QRect(20, 70, 301, 31))
         self.hint.setStyleSheet("QLabel {\n"
-"    color: white;\n"
+"    color: #47525E;\n"
 "    font-size: 15px;\n"
 "}")
         self.hint.setObjectName("hint")
@@ -72,7 +72,7 @@ class Ui_Dialog(object):
         self.cancel.setIconSize(QtCore.QSize(30, 30))
         self.cancel.setObjectName("cancel")
         self.plugin_input = QtWidgets.QLineEdit(Dialog)
-        self.plugin_input.setGeometry(QtCore.QRect(20, 110, 191, 31))
+        self.plugin_input.setGeometry(QtCore.QRect(20, 110, 191, 35))
         self.plugin_input.setStyleSheet("QLineEdit {\n"
 "    background-color: white;\n"
 "    color: black;\n"
