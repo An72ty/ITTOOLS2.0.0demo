@@ -2,6 +2,8 @@ from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from design import Ui_MainWindow
 from dialogs import install_plugin
+from libs import sqlCoder as sql
+from widgets.plugin_design import Ui_Plugin
 import sys
 
 
@@ -56,6 +58,8 @@ class MainWindow(Ui_MainWindow):
         ui = super()
         ui.setupUi(self.MainWindow)
 
+        sql.initTable()
+        sql.updateDB()
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
 
@@ -135,7 +139,16 @@ class MainWindow(Ui_MainWindow):
     def add_functions_to_left_menu_panel_buttons(self):
         def show_show_plugins_frame():
             self.set_base_stylesheet_to_top_menu_panel_buttons()
+            self.plugins_area_content
+            sql.updateDB()
             self.show_plugins_frame.raise_()
+
+            for name, version, status in sql.getPluginsList():
+                Plugin = QtWidgets.QWidget(self.plugins_area_content)
+                ui = Ui_Plugin()
+                ui.setupUi(Plugin)
+                ui.name.setText(name)
+                Plugin.show()
 
         def show_install_plugin_dialog():
             self.set_base_stylesheet_to_top_menu_panel_buttons()

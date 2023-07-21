@@ -19,20 +19,20 @@ class Ui_Dialog(object):
         icon.addPixmap(QtGui.QPixmap("dialogs\\../images/icons/download.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setStyleSheet("background-color: #0d1117;\n"
-"font: 25px \"Verdana\";\n"
+"\n"
 "")
         self.hint = QtWidgets.QLabel(Dialog)
         self.hint.setGeometry(QtCore.QRect(20, 70, 301, 31))
         self.hint.setStyleSheet("QLabel {\n"
 "    color: #47525E;\n"
-"    font-size: 15px;\n"
+"    font: 15px \"Verdana\";\n"
 "}")
         self.hint.setObjectName("hint")
         self.title = QtWidgets.QLabel(Dialog)
         self.title.setGeometry(QtCore.QRect(20, 20, 221, 41))
         self.title.setStyleSheet("QLabel {\n"
 "    color: white;\n"
-"    font-size: 30px;\n"
+"    font: 30px \"Verdana\";\n"
 "}")
         self.title.setObjectName("title")
         self.install = QtWidgets.QPushButton(Dialog)

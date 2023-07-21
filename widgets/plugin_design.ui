@@ -1,70 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>Plugin</class>
+ <widget class="QWidget" name="Plugin">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>316</width>
-    <height>221</height>
+    <width>610</width>
+    <height>84</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Install plugin</string>
-  </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>../images/icons/download.png</normaloff>../images/icons/download.png</iconset>
+   <string>Plugin</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #0d1117;
-
-</string>
+color: white;</string>
   </property>
-  <widget class="QLabel" name="hint">
+  <widget class="QLabel" name="name">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>301</width>
+     <x>84</x>
+     <y>0</y>
+     <width>380</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel {
-	color: #47525E;
-	font: 15px &quot;Verdana&quot;;
-}</string>
+    <string notr="true">font: 20px &quot;Verdana&quot;;</string>
    </property>
    <property name="text">
-    <string>Enter &lt;dev_name&gt;\&lt;plugin_name&gt;</string>
+    <string>Plugin</string>
    </property>
   </widget>
-  <widget class="QLabel" name="title">
+  <widget class="QLabel" name="icon">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>221</width>
-     <height>41</height>
+     <x>10</x>
+     <y>10</y>
+     <width>64</width>
+     <height>64</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-	color: white;
-	font: 30px &quot;Verdana&quot;;
-}</string>
-   </property>
    <property name="text">
-    <string>Install plugin</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/icons/ITTOOLS_icon.ico</pixmap>
    </property>
   </widget>
-  <widget class="QPushButton" name="install">
+  <widget class="QPushButton" name="reinstall">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>110</y>
+     <x>475</x>
+     <y>25</y>
      <width>35</width>
      <height>35</height>
     </rect>
@@ -96,11 +85,11 @@ QPushButton::hover {
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="cancel">
+  <widget class="QPushButton" name="remove">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>110</y>
+     <x>520</x>
+     <y>25</y>
      <width>35</width>
      <height>35</height>
     </rect>
@@ -132,22 +121,57 @@ QPushButton::hover {
     </size>
    </property>
   </widget>
-  <widget class="QLineEdit" name="plugin_input">
+  <widget class="QPushButton" name="activate">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>110</y>
-     <width>191</width>
+     <x>565</x>
+     <y>25</y>
+     <width>35</width>
      <height>35</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-size: 17px;
+    <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
 	border-radius: 10px;
-}</string>
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/icons/touch.png</normaloff>../images/icons/touch.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="description">
+   <property name="geometry">
+    <rect>
+     <x>84</x>
+     <y>31</y>
+     <width>380</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 15px &quot;Verdana&quot;;
+color: #47525E;</string>
+   </property>
+   <property name="text">
+    <string>Plugin Description</string>
    </property>
   </widget>
  </widget>
