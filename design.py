@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(950, 650)
         MainWindow.setMinimumSize(QtCore.QSize(950, 650))
-        MainWindow.setMaximumSize(QtCore.QSize(950, 650))
+        MainWindow.setMaximumSize(QtCore.QSize(950, 6500))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("images/icons/ITTOOLS_icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)

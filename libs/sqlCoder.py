@@ -26,8 +26,7 @@ def initTable(dbPath: str = 'data/pluginsInfoDB.db') -> None:
         cur.execute("""
         CREATE TABLE IF NOT EXISTS plugins (
             name TEXT,
-            version TEXT,
-            status TEXT
+            version TEXT
         )
         """)
         con.commit()
@@ -96,8 +95,7 @@ def updateDB(dbPath: str = 'data/pluginsInfoDB.db') -> None:
         cur.execute("""
         CREATE TABLE IF NOT EXISTS plugins (
             name TEXT,
-            version TEXT,
-            status TEXT
+            version TEXT
         )
         """)
         folders = os.listdir('plugins/')
@@ -106,5 +104,5 @@ def updateDB(dbPath: str = 'data/pluginsInfoDB.db') -> None:
             if isPluginCorrect(folderPath):
                 d = json.loads(open(folderPath+'/info.json').read())
                 cur.execute(
-                    "INSERT INTO plugins VALUES (:name, :version, :status)", d)
+                    "INSERT INTO plugins VALUES (:name, :version)", d)
         con.commit()

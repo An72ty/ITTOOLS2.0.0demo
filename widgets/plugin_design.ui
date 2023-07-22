@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>610</width>
+    <width>617</width>
     <height>84</height>
    </rect>
   </property>
@@ -14,20 +14,24 @@
    <string>Plugin</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #0d1117;
-color: white;</string>
+   <string notr="true">QWidget {
+	background-color: #0d1117;
+	border: none;
+}</string>
   </property>
   <widget class="QLabel" name="name">
    <property name="geometry">
     <rect>
      <x>84</x>
-     <y>0</y>
+     <y>10</y>
      <width>380</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 20px &quot;Verdana&quot;;</string>
+    <string notr="true">font: 20px &quot;Verdana&quot;;
+color: white;
+border: none;</string>
    </property>
    <property name="text">
     <string>Plugin</string>
@@ -41,6 +45,9 @@ color: white;</string>
      <width>64</width>
      <height>64</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -157,21 +164,22 @@ QPushButton::hover {
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="description">
+  <widget class="QLabel" name="version">
    <property name="geometry">
     <rect>
      <x>84</x>
-     <y>31</y>
+     <y>53</y>
      <width>380</width>
-     <height>51</height>
+     <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">font: 15px &quot;Verdana&quot;;
-color: #47525E;</string>
+color: #47525E;
+border: none;</string>
    </property>
    <property name="text">
-    <string>Plugin Description</string>
+    <string>Plugin Version</string>
    </property>
   </widget>
  </widget>

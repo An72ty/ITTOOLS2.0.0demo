@@ -142,12 +142,16 @@ class MainWindow(Ui_MainWindow):
             self.plugins_area_content
             sql.updateDB()
             self.show_plugins_frame.raise_()
-
-            for name, version, status in sql.getPluginsList():
+            y_move = 1
+            for name, version in sql.getPluginsList():
                 Plugin = QtWidgets.QWidget(self.plugins_area_content)
                 ui = Ui_Plugin()
                 ui.setupUi(Plugin)
                 ui.name.setText(name)
+                ui.version.setText(version)
+
+                Plugin.move(1, y_move)
+                y_move += Plugin.height() + 10
                 Plugin.show()
 
         def show_install_plugin_dialog():

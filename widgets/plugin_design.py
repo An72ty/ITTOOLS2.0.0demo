@@ -14,15 +14,20 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Plugin(object):
     def setupUi(self, Plugin):
         Plugin.setObjectName("Plugin")
-        Plugin.resize(610, 84)
-        Plugin.setStyleSheet("background-color: #0d1117;\n"
-"color: white;")
+        Plugin.resize(617, 84)
+        Plugin.setStyleSheet("QWidget {\n"
+"    background-color: #0d1117;\n"
+"    border: none;\n"
+"}")
         self.name = QtWidgets.QLabel(Plugin)
-        self.name.setGeometry(QtCore.QRect(84, 0, 380, 31))
-        self.name.setStyleSheet("font: 20px \"Verdana\";")
+        self.name.setGeometry(QtCore.QRect(84, 10, 380, 41))
+        self.name.setStyleSheet("font: 20px \"Verdana\";\n"
+"color: white;\n"
+"border: none;")
         self.name.setObjectName("name")
         self.icon = QtWidgets.QLabel(Plugin)
         self.icon.setGeometry(QtCore.QRect(10, 10, 64, 64))
+        self.icon.setStyleSheet("border: none;")
         self.icon.setText("")
         self.icon.setPixmap(QtGui.QPixmap("widgets\\../images/icons/ITTOOLS_icon.ico"))
         self.icon.setObjectName("icon")
@@ -83,11 +88,12 @@ class Ui_Plugin(object):
         self.activate.setIcon(icon2)
         self.activate.setIconSize(QtCore.QSize(30, 30))
         self.activate.setObjectName("activate")
-        self.description = QtWidgets.QLabel(Plugin)
-        self.description.setGeometry(QtCore.QRect(84, 31, 380, 51))
-        self.description.setStyleSheet("font: 15px \"Verdana\";\n"
-"color: #47525E;")
-        self.description.setObjectName("description")
+        self.version = QtWidgets.QLabel(Plugin)
+        self.version.setGeometry(QtCore.QRect(84, 53, 380, 20))
+        self.version.setStyleSheet("font: 15px \"Verdana\";\n"
+"color: #47525E;\n"
+"border: none;")
+        self.version.setObjectName("version")
 
         self.retranslateUi(Plugin)
         QtCore.QMetaObject.connectSlotsByName(Plugin)
@@ -96,7 +102,7 @@ class Ui_Plugin(object):
         _translate = QtCore.QCoreApplication.translate
         Plugin.setWindowTitle(_translate("Plugin", "Plugin"))
         self.name.setText(_translate("Plugin", "Plugin"))
-        self.description.setText(_translate("Plugin", "Plugin Description"))
+        self.version.setText(_translate("Plugin", "Plugin Version"))
 
 
 if __name__ == "__main__":
