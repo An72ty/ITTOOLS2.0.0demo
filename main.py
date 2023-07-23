@@ -154,6 +154,10 @@ class MainWindow(Ui_MainWindow):
                 y_move += Plugin.height() + 10
                 Plugin.show()
 
+                if Plugin.y() >= self.plugins_area_content.height():
+                    self.plugins_area_content.setFixedHeight(
+                        y_move + Plugin.height())
+
         def show_install_plugin_dialog():
             self.set_base_stylesheet_to_top_menu_panel_buttons()
             dialog = install_plugin.Dialog()
