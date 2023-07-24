@@ -15,11 +15,11 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../images/icons/download.png</normaloff>../images/icons/download.png</iconset>
+    <normaloff>../images/icons/remove.png</normaloff>../images/icons/remove.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #0d1117;
-
+font: 25px &quot;Verdana&quot;;
 </string>
   </property>
   <widget class="QLabel" name="hint">
@@ -33,12 +33,12 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel {
-	color: #47525E;
-	font: 15px &quot;Verdana&quot;;
+	color: white;
+	font-size: 15px;
 }</string>
    </property>
    <property name="text">
-    <string>Enter &lt;dev_name&gt;\&lt;plugin_name&gt;</string>
+    <string>Select plugin</string>
    </property>
   </widget>
   <widget class="QLabel" name="title">
@@ -46,25 +46,25 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>221</width>
+     <width>231</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel {
 	color: white;
-	font: 30px &quot;Verdana&quot;;
+	font-size: 30px;
 }</string>
    </property>
    <property name="text">
-    <string>Install plugin</string>
+    <string>Remove plugin</string>
    </property>
   </widget>
   <widget class="QPushButton" name="install">
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>110</y>
+     <y>100</y>
      <width>35</width>
      <height>35</height>
     </rect>
@@ -87,7 +87,7 @@ QPushButton::hover {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/icons/download.png</normaloff>../images/icons/download.png</iconset>
+     <normaloff>../../images/icons/remove.png</normaloff>../../images/icons/remove.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -100,7 +100,7 @@ QPushButton::hover {
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>110</y>
+     <y>100</y>
      <width>35</width>
      <height>35</height>
     </rect>
@@ -123,7 +123,7 @@ QPushButton::hover {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/icons/exit.png</normaloff>../images/icons/exit.png</iconset>
+     <normaloff>../../images/icons/exit.png</normaloff>../../images/icons/exit.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -132,22 +132,21 @@ QPushButton::hover {
     </size>
    </property>
   </widget>
-  <widget class="QLineEdit" name="plugin_input">
+  <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>110</y>
      <width>191</width>
-     <height>35</height>
+     <height>22</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLineEdit {
+    <string notr="true">QComboBox {
 	background-color: white;
-	color: black;
-	font-size: 17px;
-	border-radius: 10px;
-}</string>
+	border-width: 0px;
+}
+</string>
    </property>
   </widget>
  </widget>

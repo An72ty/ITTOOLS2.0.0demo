@@ -1,4 +1,4 @@
-from dialogs.install_plugin_design import Ui_Dialog
+from dialogs.remove_plugin_dialog.remove_plugin_design import Ui_Dialog
 from PyQt5 import QtWidgets
 
 
@@ -10,4 +10,3 @@ class Dialog(Ui_Dialog):
         ui.setupUi(self.Dialog)
 
         self.cancel.clicked.connect(self.Dialog.close)
-        # self.install.clicked.connect(self.install_plugin)

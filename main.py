@@ -1,7 +1,8 @@
 from PyQt5 import QtWidgets
-from PyQt5 import QtGui
 from design import Ui_MainWindow
-from dialogs import install_plugin
+from dialogs.install_plugin_dialog import install_plugin
+from dialogs.activate_plugin_dialog import activate_plugin
+from dialogs.remove_plugin_dialog import remove_plugin
 from libs import sqlCoder as sql
 from widgets.plugin_design import Ui_Plugin
 import sys
@@ -57,8 +58,9 @@ class MainWindow(Ui_MainWindow):
         self.MainWindow = QtWidgets.QMainWindow()
         ui = super()
         ui.setupUi(self.MainWindow)
-
+        # Setup sql
         sql.initTable()
+        # Update plugin info
         sql.updateDB()
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
@@ -163,8 +165,20 @@ class MainWindow(Ui_MainWindow):
             dialog = install_plugin.Dialog()
             dialog.Dialog.exec_()
 
+        def show_activate_plugin_dialog():
+            self.set_base_stylesheet_to_top_menu_panel_buttons()
+            dialog = activate_plugin.Dialog()
+            dialog.Dialog.exec_()
+
+        def show_remove_plugin_dialog():
+            self.set_base_stylesheet_to_top_menu_panel_buttons()
+            dialog = remove_plugin.Dialog()
+            dialog.Dialog.exec_()
+
         self.show_plugins_btn.clicked.connect(show_show_plugins_frame)
         self.install_plugin_btn.clicked.connect(show_install_plugin_dialog)
+        self.activate_plugin_btn.clicked.connect(show_activate_plugin_dialog)
+        self.remove_plugin_btn.clicked.connect(show_remove_plugin_dialog)
         self.exit_btn.clicked.connect(self.MainWindow.close)
 
     def set_base_stylesheet_to_top_menu_panel_buttons(self):
