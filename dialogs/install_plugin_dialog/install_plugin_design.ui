@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../images/icons/download.png</normaloff>../images/icons/download.png</iconset>
+    <normaloff>../../images/icons/download.png</normaloff>../../images/icons/download.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #0d1117;
@@ -136,7 +136,7 @@ QPushButton::hover {
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>110</y>
+     <y>112</y>
      <width>191</width>
      <height>31</height>
     </rect>
