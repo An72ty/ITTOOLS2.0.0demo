@@ -620,10 +620,7 @@ background-color: #131C30;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QScrollArea {
-	border: 1px solid #47525E;
-}
-QScrollBar {
-	width: 10px;
+	border: none;
 }</string>
       </property>
       <property name="verticalScrollBarPolicy">
@@ -640,9 +637,12 @@ QScrollBar {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>619</width>
-         <height>438</height>
+         <width>621</width>
+         <height>440</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
       </widget>
      </widget>
