@@ -274,17 +274,15 @@ class Ui_MainWindow(object):
         self.plugins = QtWidgets.QScrollArea(self.show_plugins_frame)
         self.plugins.setGeometry(QtCore.QRect(9, 129, 621, 440))
         self.plugins.setStyleSheet("QScrollArea {\n"
-"    border: 1px solid #47525E;\n"
-"}\n"
-"QScrollBar {\n"
-"    width: 10px;\n"
+"    border: none;\n"
 "}")
         self.plugins.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.plugins.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.plugins.setWidgetResizable(True)
         self.plugins.setObjectName("plugins")
         self.plugins_area_content = QtWidgets.QWidget()
-        self.plugins_area_content.setGeometry(QtCore.QRect(0, 0, 619, 438))
+        self.plugins_area_content.setGeometry(QtCore.QRect(0, 0, 621, 440))
+        self.plugins_area_content.setStyleSheet("")
         self.plugins_area_content.setObjectName("plugins_area_content")
         self.plugins.setWidget(self.plugins_area_content)
         self.install = QtWidgets.QPushButton(self.show_plugins_frame)

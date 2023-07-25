@@ -1,10 +1,17 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 from design import Ui_MainWindow
 from dialogs.install_plugin_dialog import install_plugin
 from dialogs.activate_plugin_dialog import activate_plugin
 from dialogs.remove_plugin_dialog import remove_plugin
 from libs import sqlCoder as sql
 from widgets.plugin_design import Ui_Plugin
+from libs import network
+from dialogs.install_plugin_dialog import install_plugin
+import shutil
+import requests
+import zipfile
+import re
+import os
 import sys
 
 
@@ -64,6 +71,31 @@ class MainWindow(Ui_MainWindow):
         sql.updateDB()
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
+    
+    @staticmethod
+    def update_plugins_area_content(self):
+        y_move = 2
+        for name, version, image in sql.getPluginsList():
+            Plugin = QtWidgets.QWidget(self.plugins_area_content)
+            ui = Ui_Plugin()
+            ui.setupUi(Plugin)
+            try:
+                icon = QtGui.QPixmap(f"plugins/{name}/{image}")
+                ui.icon.setPixmap(icon)
+            except FileNotFoundError:
+                pass
+            ui.name.setText(name)
+            ui.version.setText(version)
+
+            Plugin.move(2, y_move)
+            y_move += Plugin.height() + 10
+            Plugin.show()
+
+            if Plugin.y() >= self.plugins_area_content.height():
+                self.plugins.setFixedWidth(
+                    self.plugins_area_content.width() + 5)
+                self.plugins_area_content.setFixedHeight(
+                    y_move + Plugin.height())
 
     def add_functions_to_top_menu_panel_buttons(self):
         def show_whats_new_frame():
@@ -140,23 +172,32 @@ class MainWindow(Ui_MainWindow):
 
     def add_functions_to_left_menu_panel_buttons(self):
         def show_show_plugins_frame():
+
             self.set_base_stylesheet_to_top_menu_panel_buttons()
-            self.plugins_area_content
+            self.install.clicked.connect(
+                lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text()))
             sql.updateDB()
             self.show_plugins_frame.raise_()
-            y_move = 1
-            for name, version in sql.getPluginsList():
+            y_move = 2
+            for name, version, image in sql.getPluginsList():
                 Plugin = QtWidgets.QWidget(self.plugins_area_content)
                 ui = Ui_Plugin()
                 ui.setupUi(Plugin)
+                try:
+                    icon = QtGui.QPixmap(f"plugins/{name}/{image}")
+                    ui.icon.setPixmap(icon)
+                except FileNotFoundError:
+                    pass
                 ui.name.setText(name)
                 ui.version.setText(version)
 
-                Plugin.move(1, y_move)
+                Plugin.move(2, y_move)
                 y_move += Plugin.height() + 10
                 Plugin.show()
 
                 if Plugin.y() >= self.plugins_area_content.height():
+                    self.plugins.setFixedWidth(
+                        self.plugins_area_content.width() + 5)
                     self.plugins_area_content.setFixedHeight(
                         y_move + Plugin.height())
 

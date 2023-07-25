@@ -3,19 +3,12 @@ import sqlite3
 import os.path
 import os
 import json
-from libs.version import compareVersions
-AppData = None
-NAME = 'sqlCoder'
+import shutil
 
 
 def isPluginCorrect(path):
     if os.path.isdir(path):
         return True
-
-
-def init(data):
-    global AppData
-    AppData = data
 
 
 def initTable(dbPath: str = 'data/pluginsInfoDB.db') -> None:
@@ -26,7 +19,8 @@ def initTable(dbPath: str = 'data/pluginsInfoDB.db') -> None:
         cur.execute("""
         CREATE TABLE IF NOT EXISTS plugins (
             name TEXT,
-            version TEXT
+            version TEXT,
+            icon TEXT
         )
         """)
         con.commit()
@@ -41,12 +35,12 @@ def remove(name: str, dbPath: str = 'data/pluginsInfoDB.db') -> None:
         con.commit()
 
 
-def insert(name: str, version: str, status: str, dbPath: str = 'data/pluginsInfoDB.db') -> None:
+def insert(name: str, version: str, icon: str, dbPath: str = 'data/pluginsInfoDB.db') -> None:
     # Connect
     with sqlite3.connect(dbPath) as con:
         cur = con.cursor()
-        cur.execute("INSERT INTO plugins VALUES (:name, :version, :status)", {
-                    "name": name, "version": version, "status": status})
+        cur.execute("INSERT INTO plugins VALUES (:name, :version, :icon)", {
+                    "name": name, "version": version, "icon": icon})
         con.commit()
 
 
@@ -72,18 +66,6 @@ def getVersion(name: str, dbPath: str = 'data/pluginsInfoDB.db') -> str:
         return response
 
 
-def getStatus(name: str, dbPath: str = 'data/pluginsInfoDB.db') -> str:
-    # Connect
-    with sqlite3.connect(dbPath) as con:
-        cur = con.cursor()
-        cur.execute('SELECT (status) FROM plugins WHERE name=:name',
-                    {"name": name})
-        response = cur.fetchall()
-        if response != []:
-            response = response[0][0]
-        return response
-
-
 def updateDB(dbPath: str = 'data/pluginsInfoDB.db') -> None:
     global isPluginCorrect
     # Connect
@@ -95,7 +77,8 @@ def updateDB(dbPath: str = 'data/pluginsInfoDB.db') -> None:
         cur.execute("""
         CREATE TABLE IF NOT EXISTS plugins (
             name TEXT,
-            version TEXT
+            version TEXT,
+            icon TEXT
         )
         """)
         folders = os.listdir('plugins/')
@@ -104,5 +87,5 @@ def updateDB(dbPath: str = 'data/pluginsInfoDB.db') -> None:
             if isPluginCorrect(folderPath):
                 d = json.loads(open(folderPath+'/info.json').read())
                 cur.execute(
-                    "INSERT INTO plugins VALUES (:name, :version)", d)
+                    "INSERT INTO plugins VALUES (:name, :version, :icon)", d)
         con.commit()

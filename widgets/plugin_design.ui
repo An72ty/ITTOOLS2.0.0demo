@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>617</width>
+    <width>604</width>
     <height>84</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
     <rect>
      <x>84</x>
      <y>10</y>
-     <width>380</width>
+     <width>416</width>
      <height>41</height>
     </rect>
    </property>
@@ -54,42 +54,6 @@ border: none;</string>
    </property>
    <property name="pixmap">
     <pixmap>../images/icons/ITTOOLS_icon.ico</pixmap>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="reinstall">
-   <property name="geometry">
-    <rect>
-     <x>475</x>
-     <y>25</y>
-     <width>35</width>
-     <height>35</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	border: 0px;
-	color: white;
-	font: 25px &quot;Verdana&quot;;
-	border-radius: 10px;
-}
-
-QPushButton::hover {
-	background-color: #5a6677;
-}
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../images/icons/download.png</normaloff>../images/icons/download.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="remove">
@@ -169,7 +133,7 @@ QPushButton::hover {
     <rect>
      <x>84</x>
      <y>53</y>
-     <width>380</width>
+     <width>416</width>
      <height>20</height>
     </rect>
    </property>
