@@ -83,7 +83,7 @@ QPushButton::hover {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/icons/exit.png</normaloff>../images/icons/exit.png</iconset>
+     <normaloff>../images/icons/remove.png</normaloff>../images/icons/remove.png</iconset>
    </property>
    <property name="iconSize">
     <size>

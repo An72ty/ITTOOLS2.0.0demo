@@ -46,7 +46,7 @@ class Ui_Plugin(object):
 "")
         self.remove.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("widgets\\../images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("widgets\\../images/icons/remove.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.remove.setIcon(icon)
         self.remove.setIconSize(QtCore.QSize(30, 30))
         self.remove.setObjectName("remove")
