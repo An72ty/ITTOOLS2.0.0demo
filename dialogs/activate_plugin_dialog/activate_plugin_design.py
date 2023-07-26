@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'dialogs/activate_plugin_dialog/activate_plugin_design.ui'
+# Form implementation generated from reading ui file 'dialogs\activate_plugin_dialog\activate_plugin_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(316, 221)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("dialogs/activate_plugin_dialog\\../../images/icons/touch.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("dialogs\\activate_plugin_dialog\\../../images/icons/touch.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setStyleSheet("background-color: #0d1117;\n"
 "font: 25px \"Verdana\";\n"
@@ -35,9 +35,9 @@ class Ui_Dialog(object):
 "    font-size: 30px;\n"
 "}")
         self.title.setObjectName("title")
-        self.install = QtWidgets.QPushButton(Dialog)
-        self.install.setGeometry(QtCore.QRect(220, 110, 35, 35))
-        self.install.setStyleSheet("QPushButton {\n"
+        self.activate = QtWidgets.QPushButton(Dialog)
+        self.activate.setGeometry(QtCore.QRect(220, 110, 35, 35))
+        self.activate.setStyleSheet("QPushButton {\n"
 "    border: 0px;\n"
 "    color: white;\n"
 "    font: 25px \"Verdana\";\n"
@@ -48,10 +48,10 @@ class Ui_Dialog(object):
 "    background-color: #5a6677;\n"
 "}\n"
 "")
-        self.install.setText("")
-        self.install.setIcon(icon)
-        self.install.setIconSize(QtCore.QSize(30, 30))
-        self.install.setObjectName("install")
+        self.activate.setText("")
+        self.activate.setIcon(icon)
+        self.activate.setIconSize(QtCore.QSize(30, 30))
+        self.activate.setObjectName("activate")
         self.cancel = QtWidgets.QPushButton(Dialog)
         self.cancel.setGeometry(QtCore.QRect(260, 110, 35, 35))
         self.cancel.setStyleSheet("QPushButton {\n"
@@ -67,25 +67,28 @@ class Ui_Dialog(object):
 "")
         self.cancel.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("dialogs/activate_plugin_dialog\\../../images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("dialogs\\activate_plugin_dialog\\../../images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.cancel.setIcon(icon1)
         self.cancel.setIconSize(QtCore.QSize(30, 30))
         self.cancel.setObjectName("cancel")
-        self.comboBox = QtWidgets.QComboBox(Dialog)
-        self.comboBox.setGeometry(QtCore.QRect(20, 112, 191, 31))
-        self.comboBox.setStyleSheet("QComboBox {\n"
+        self.plugin_input = QtWidgets.QComboBox(Dialog)
+        self.plugin_input.setGeometry(QtCore.QRect(20, 112, 191, 31))
+        self.plugin_input.setStyleSheet("QComboBox {\n"
 "    background-color: white;\n"
-"    border-width: 0px;\n"
+"    border-radius: 10px;\n"
 "}\n"
-"")
-        self.comboBox.setObjectName("comboBox")
+"\n"
+"QComboBox::drop-down {\n"
+"    border-radius: 10px;\n"
+"}")
+        self.plugin_input.setObjectName("plugin_input")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Install plugin"))
+        Dialog.setWindowTitle(_translate("Dialog", "Activate plugin"))
         self.hint.setText(_translate("Dialog", "Select plugin"))
         self.title.setText(_translate("Dialog", "Activate plugin"))
 

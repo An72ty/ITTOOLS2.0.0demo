@@ -2,7 +2,6 @@ from dialogs.install_plugin_dialog.install_plugin_design import Ui_Dialog
 from PyQt5 import QtWidgets, QtGui
 from libs import network
 from libs import sqlCoder as sql
-import main
 import shutil
 import re
 import requests
@@ -109,4 +108,3 @@ class Dialog(Ui_Dialog):
             error.exec_()
 
         sql.updateDB()
-        main.MainWindow.update_plugins_area_content()

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Install plugin</string>
+   <string>Remove plugin</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -60,7 +60,7 @@ font: 25px &quot;Verdana&quot;;
     <string>Remove plugin</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="install">
+  <widget class="QPushButton" name="remove">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -132,7 +132,7 @@ QPushButton::hover {
     </size>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="plugin_input">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -144,9 +144,12 @@ QPushButton::hover {
    <property name="styleSheet">
     <string notr="true">QComboBox {
 	background-color: white;
-	border-width: 0px;
+	border-radius: 10px;
 }
-</string>
+
+QComboBox::drop-down {
+	border-radius: 10px;
+}</string>
    </property>
   </widget>
  </widget>
