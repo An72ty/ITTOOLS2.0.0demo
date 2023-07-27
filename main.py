@@ -182,8 +182,10 @@ class MainWindow(Ui_MainWindow):
 
     def add_functions_to_left_menu_panel_buttons(self):
         self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)
-        self.install_plugin_btn.clicked.connect(self.show_install_plugin_dialog)
-        self.activate_plugin_btn.clicked.connect(self.show_activate_plugin_dialog)
+        self.install_plugin_btn.clicked.connect(
+            self.show_install_plugin_dialog)
+        self.activate_plugin_btn.clicked.connect(
+            self.show_activate_plugin_dialog)
         self.remove_plugin_btn.clicked.connect(self.show_remove_plugin_dialog)
         self.exit_btn.clicked.connect(self.MainWindow.close)
 
@@ -191,7 +193,11 @@ class MainWindow(Ui_MainWindow):
         self.set_base_stylesheet_to_top_menu_panel_buttons()
         self.install.clicked.connect(
             lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
+
         self.show_plugins_frame.raise_()
+        self.plugin_input.setText("")
+        for widget in self.plugins_area_content.children():
+            widget.setParent(None)
         y_move = 2
         for name, version, image in sql.getPluginsList():
             Plugin = QtWidgets.QWidget(self.plugins_area_content)
@@ -206,7 +212,7 @@ class MainWindow(Ui_MainWindow):
             ui.name.setText(name)
             ui.version.setText(version)
             ui.remove.clicked.connect(
-                lambda: remove_plugin.Dialog.remove_plugin(name))
+                lambda: remove_plugin.Dialog.remove_plugin(name, self))
             ui.activate.clicked.connect(
                 lambda: activate_plugin.Dialog.activate_plugin(name))
             Plugin.move(2, y_move)
@@ -217,10 +223,10 @@ class MainWindow(Ui_MainWindow):
                     self.plugins_area_content.width() + 5)
                 self.plugins_area_content.setFixedHeight(
                     y_move + Plugin.height())
-                
+
     def show_install_plugin_dialog(self):
         self.set_base_stylesheet_to_top_menu_panel_buttons()
-        install_plugin.App = self
+        install_plugin.Window = self
         dialog = install_plugin.Dialog()
         dialog.Dialog.exec_()
 
@@ -231,6 +237,7 @@ class MainWindow(Ui_MainWindow):
 
     def show_remove_plugin_dialog(self):
         self.set_base_stylesheet_to_top_menu_panel_buttons()
+        remove_plugin.Window = self
         dialog = remove_plugin.Dialog()
         dialog.Dialog.exec_()
 

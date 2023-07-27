@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'dialogs/install_plugin_dialog/install_plugin_design.ui'
+# Form implementation generated from reading ui file 'dialogs\install_plugin_dialog\install_plugin_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(316, 221)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("dialogs/install_plugin_dialog\\../../images/icons/download.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("dialogs\\install_plugin_dialog\\../../images/icons/download.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setStyleSheet("background-color: #0d1117;\n"
 "font: 25px \"Verdana\";\n"
@@ -67,7 +67,7 @@ class Ui_Dialog(object):
 "")
         self.cancel.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("dialogs/install_plugin_dialog\\../../images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("dialogs\\install_plugin_dialog\\../../images/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.cancel.setIcon(icon1)
         self.cancel.setIconSize(QtCore.QSize(30, 30))
         self.cancel.setObjectName("cancel")
@@ -87,7 +87,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Install plugin"))
-        self.hint.setText(_translate("Dialog", "Enter <dev_name>\\<plugin_name>"))
+        self.hint.setText(_translate("Dialog", "Write <dev_name>\\<plugin_name>"))
         self.title.setText(_translate("Dialog", "Install plugin"))
 
 

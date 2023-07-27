@@ -45,7 +45,7 @@ def insert(name: str, version: str, icon: str, dbPath: str = 'data/pluginsInfoDB
 
 
 def getPluginsList(dbPath: str = 'data/pluginsInfoDB.db') -> list:
-    # Connect
+    # updateDB()
     with sqlite3.connect(dbPath) as con:
         cur = con.cursor()
         cur.execute("SELECT * FROM plugins")

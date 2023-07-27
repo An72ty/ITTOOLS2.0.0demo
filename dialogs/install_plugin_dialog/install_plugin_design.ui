@@ -38,7 +38,7 @@ font: 25px &quot;Verdana&quot;;
 }</string>
    </property>
    <property name="text">
-    <string>Enter &lt;dev_name&gt;\&lt;plugin_name&gt;</string>
+    <string>Write &lt;dev_name&gt;\&lt;plugin_name&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="title">

@@ -8,7 +8,9 @@ import requests
 import os
 import zipfile
 
-App = None
+Window = None
+
+
 class Dialog(Ui_Dialog):
     def __init__(self):
         super().__init__()
@@ -18,10 +20,10 @@ class Dialog(Ui_Dialog):
 
         self.cancel.clicked.connect(self.Dialog.close)
         self.install.clicked.connect(
-            lambda: self.install_plugin(self.plugin_input.text(), App))
+            lambda: self.install_plugin(self.plugin_input.text(), Window, self))
 
     @staticmethod
-    def install_plugin(text, app):
+    def install_plugin(text: str, window, install_plugin_dialog=None):
         error = QtWidgets.QMessageBox()
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(
@@ -108,4 +110,7 @@ class Dialog(Ui_Dialog):
             error.exec_()
 
         sql.updateDB()
-        app.show_show_plugins_frame()
+        window.show_show_plugins_frame()
+
+        if install_plugin_dialog:
+            install_plugin_dialog.Dialog.close()

@@ -76,6 +76,7 @@ class Ui_Dialog(object):
         self.plugin_input.setStyleSheet("QComboBox {\n"
 "    background-color: white;\n"
 "    border-radius: 10px;\n"
+"    font-size: 17px;\n"
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
