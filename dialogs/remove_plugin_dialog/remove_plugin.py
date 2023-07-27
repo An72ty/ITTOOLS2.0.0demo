@@ -1,6 +1,7 @@
 from dialogs.remove_plugin_dialog.remove_plugin_design import Ui_Dialog
 from libs import sqlCoder as sql
 from PyQt5 import QtWidgets
+from os.path import exists
 import shutil
 
 
@@ -23,5 +24,6 @@ class Dialog(Ui_Dialog):
 
     @staticmethod
     def remove_plugin(name: str):
-        shutil.rmtree(f'plugins/{name}')
-        sql.updateDB()
+        if exists(f'plugins/{name}'):
+            shutil.rmtree(f'plugins/{name}')
+            sql.updateDB()

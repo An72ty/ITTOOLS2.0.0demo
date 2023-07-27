@@ -181,61 +181,58 @@ class MainWindow(Ui_MainWindow):
         self.settings_btn.clicked.connect(show_settings_frame)
 
     def add_functions_to_left_menu_panel_buttons(self):
-        def show_show_plugins_frame():
-
-            self.set_base_stylesheet_to_top_menu_panel_buttons()
-            self.install.clicked.connect(
-                lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text()))
-            sql.updateDB()
-            self.show_plugins_frame.raise_()
-            y_move = 2
-            for name, version, image in sql.getPluginsList():
-                Plugin = QtWidgets.QWidget(self.plugins_area_content)
-                ui = Ui_Plugin()
-                ui.setupUi(Plugin)
-                try:
-                    icon = QtGui.QPixmap(f"plugins/{name}/{image}")
-                    ui.icon.setPixmap(icon)
-                except FileNotFoundError:
-                    icon = QtGui.QPixmap("images/icons/ITTOOLS_icon.ico")
-                    ui.icon.setPixmap(icon)
-                ui.name.setText(name)
-                ui.version.setText(version)
-                ui.remove.clicked.connect(
-                    lambda: remove_plugin.Dialog.remove_plugin(name))
-                ui.activate.clicked.connect(
-                    lambda: activate_plugin.Dialog.activate_plugin(name))
-
-                Plugin.move(2, y_move)
-                y_move += Plugin.height() + 10
-                Plugin.show()
-
-                if Plugin.y() >= self.plugins_area_content.height():
-                    self.plugins.setFixedWidth(
-                        self.plugins_area_content.width() + 5)
-                    self.plugins_area_content.setFixedHeight(
-                        y_move + Plugin.height())
-
-        def show_install_plugin_dialog():
-            self.set_base_stylesheet_to_top_menu_panel_buttons()
-            dialog = install_plugin.Dialog()
-            dialog.Dialog.exec_()
-
-        def show_activate_plugin_dialog():
-            self.set_base_stylesheet_to_top_menu_panel_buttons()
-            dialog = activate_plugin.Dialog()
-            dialog.Dialog.exec_()
-
-        def show_remove_plugin_dialog():
-            self.set_base_stylesheet_to_top_menu_panel_buttons()
-            dialog = remove_plugin.Dialog()
-            dialog.Dialog.exec_()
-
-        self.show_plugins_btn.clicked.connect(show_show_plugins_frame)
-        self.install_plugin_btn.clicked.connect(show_install_plugin_dialog)
-        self.activate_plugin_btn.clicked.connect(show_activate_plugin_dialog)
-        self.remove_plugin_btn.clicked.connect(show_remove_plugin_dialog)
+        self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)
+        self.install_plugin_btn.clicked.connect(self.show_install_plugin_dialog)
+        self.activate_plugin_btn.clicked.connect(self.show_activate_plugin_dialog)
+        self.remove_plugin_btn.clicked.connect(self.show_remove_plugin_dialog)
         self.exit_btn.clicked.connect(self.MainWindow.close)
+
+    def show_show_plugins_frame(self):
+        self.set_base_stylesheet_to_top_menu_panel_buttons()
+        self.install.clicked.connect(
+            lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
+        self.show_plugins_frame.raise_()
+        y_move = 2
+        for name, version, image in sql.getPluginsList():
+            Plugin = QtWidgets.QWidget(self.plugins_area_content)
+            ui = Ui_Plugin()
+            ui.setupUi(Plugin)
+            try:
+                icon = QtGui.QPixmap(f"plugins/{name}/{image}")
+                ui.icon.setPixmap(icon)
+            except FileNotFoundError:
+                icon = QtGui.QPixmap("images/icons/ITTOOLS_icon.ico")
+                ui.icon.setPixmap(icon)
+            ui.name.setText(name)
+            ui.version.setText(version)
+            ui.remove.clicked.connect(
+                lambda: remove_plugin.Dialog.remove_plugin(name))
+            ui.activate.clicked.connect(
+                lambda: activate_plugin.Dialog.activate_plugin(name))
+            Plugin.move(2, y_move)
+            y_move += Plugin.height() + 10
+            Plugin.show()
+            if Plugin.y() >= self.plugins_area_content.height():
+                self.plugins.setFixedWidth(
+                    self.plugins_area_content.width() + 5)
+                self.plugins_area_content.setFixedHeight(
+                    y_move + Plugin.height())
+                
+    def show_install_plugin_dialog(self):
+        self.set_base_stylesheet_to_top_menu_panel_buttons()
+        install_plugin.App = self
+        dialog = install_plugin.Dialog()
+        dialog.Dialog.exec_()
+
+    def show_activate_plugin_dialog(self):
+        self.set_base_stylesheet_to_top_menu_panel_buttons()
+        dialog = activate_plugin.Dialog()
+        dialog.Dialog.exec_()
+
+    def show_remove_plugin_dialog(self):
+        self.set_base_stylesheet_to_top_menu_panel_buttons()
+        dialog = remove_plugin.Dialog()
+        dialog.Dialog.exec_()
 
     def set_base_stylesheet_to_top_menu_panel_buttons(self):
         self.whats_new_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
