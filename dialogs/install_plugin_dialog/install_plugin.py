@@ -34,8 +34,8 @@ class Dialog(Ui_Dialog):
         error.setIcon(QtWidgets.QMessageBox.Warning)
         error.setStandardButtons(
             QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
-        answer = text
-        if re.compile(r"""[A-Za-zА-Яа-яёЁ0-9_]+\\[A-Za-zА-Яа-яёЁ0-9_]+""").fullmatch(answer):
+        answer = text.strip()
+        if re.compile(r"""[A-Za-zА-Яа-яёЁ0-9_]+\\[A-Za-zА-Яа-яёЁ0-9_]+""").search(answer):
             # if plugin is not downloaded...
             repName = "ittoolplugin."+answer.split('\\')[1]
             pluginName = answer.split('\\')[1]

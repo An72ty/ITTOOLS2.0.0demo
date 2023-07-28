@@ -77,34 +77,39 @@ class MainWindow(Ui_MainWindow):
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
 
-    # @staticmethod
-    # def update_plugins_area_content(self):
-    #     y_move = 2
-    #     for name, version, image in sql.getPluginsList():
-    #         Plugin = QtWidgets.QWidget(self.plugins_area_content)
-    #         ui = Ui_Plugin()
-    #         ui.setupUi(Plugin)
-    #         try:
-    #             icon = QtGui.QPixmap(f"plugins/{name}/{image}")
-    #             ui.icon.setPixmap(icon)
-    #         except FileNotFoundError:
-    #             pass
-    #         ui.name.setText(name)
-    #         ui.version.setText(version)
-
-    #         Plugin.move(2, y_move)
-    #         y_move += Plugin.height() + 10
-    #         Plugin.show()
-
-    #         if Plugin.y() >= self.plugins_area_content.height():
-    #             self.plugins.setFixedWidth(
-    #                 self.plugins_area_content.width() + 5)
-    #             self.plugins_area_content.setFixedHeight(
-    #                 y_move + Plugin.height())
+    def update_plugins_area_content(self):
+        for widget in self.plugins_area_content.children():
+            widget.setParent(None)
+        y_move = 2
+        for name, version, image in sql.getPluginsList():
+            Plugin = QtWidgets.QWidget(self.plugins_area_content)
+            ui = Ui_Plugin()
+            ui.setupUi(Plugin)
+            try:
+                icon = QtGui.QPixmap(f"plugins/{name}/{image}")
+                ui.icon.setPixmap(icon)
+            except FileNotFoundError:
+                icon = QtGui.QPixmap("images/icons/ITTOOLS_icon.ico")
+                ui.icon.setPixmap(icon)
+            ui.name.setText(name)
+            ui.version.setText(version)
+            ui.remove.clicked.connect(
+                lambda: remove_plugin.Dialog.remove_plugin(name, self))
+            ui.activate.clicked.connect(
+                lambda: activate_plugin.Dialog.activate_plugin(name))
+            Plugin.move(2, y_move)
+            y_move += Plugin.height() + 10
+            Plugin.show()
+            if Plugin.y() >= self.plugins_area_content.height():
+                self.plugins.setFixedWidth(
+                    self.plugins_area_content.width() + 5)
+                self.plugins_area_content.setFixedHeight(
+                    y_move + Plugin.height())
 
     def db_updating(self):
         while self.is_db_updating:
             sql.updateDB()
+            # self.update_plugins_area_content()
             time.sleep(1)
 
     def add_functions_to_top_menu_panel_buttons(self):
@@ -195,34 +200,8 @@ class MainWindow(Ui_MainWindow):
             lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
 
         self.show_plugins_frame.raise_()
-        self.plugin_input.setText("")
-        for widget in self.plugins_area_content.children():
-            widget.setParent(None)
-        y_move = 2
-        for name, version, image in sql.getPluginsList():
-            Plugin = QtWidgets.QWidget(self.plugins_area_content)
-            ui = Ui_Plugin()
-            ui.setupUi(Plugin)
-            try:
-                icon = QtGui.QPixmap(f"plugins/{name}/{image}")
-                ui.icon.setPixmap(icon)
-            except FileNotFoundError:
-                icon = QtGui.QPixmap("images/icons/ITTOOLS_icon.ico")
-                ui.icon.setPixmap(icon)
-            ui.name.setText(name)
-            ui.version.setText(version)
-            ui.remove.clicked.connect(
-                lambda: remove_plugin.Dialog.remove_plugin(name, self))
-            ui.activate.clicked.connect(
-                lambda: activate_plugin.Dialog.activate_plugin(name))
-            Plugin.move(2, y_move)
-            y_move += Plugin.height() + 10
-            Plugin.show()
-            if Plugin.y() >= self.plugins_area_content.height():
-                self.plugins.setFixedWidth(
-                    self.plugins_area_content.width() + 5)
-                self.plugins_area_content.setFixedHeight(
-                    y_move + Plugin.height())
+
+        self.update_plugins_area_content()
 
     def show_install_plugin_dialog(self):
         self.set_base_stylesheet_to_top_menu_panel_buttons()
