@@ -15,14 +15,16 @@ class Dialog(Ui_Dialog):
 
         self.cancel.clicked.connect(self.Dialog.close)
         self.activate.clicked.connect(
-            lambda: self.activate_plugin(self.plugin_input.currentText()))
+            lambda: self.activate_plugin(self.plugin_input.currentText(), self))
 
     def add_items_to_plugin_input(self):
         for name, _, _ in sql.getPluginsList():
             self.plugin_input.addItem(name)
 
     @staticmethod
-    def activate_plugin(name: str):
+    def activate_plugin(name: str, dialog=None):
         plugin = importlib.import_module(f'plugins.{name}.plugin')
+        if dialog:
+            dialog.Dialog.close()
         p = plugin.Main()
         p.show()
