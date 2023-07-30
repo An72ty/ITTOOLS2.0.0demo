@@ -36,29 +36,29 @@ CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET = """QPushButton {
                                             QPushButton::hover {
                                                 color: white;
                                             }
-                                        """
-BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
-                                            border: 0px;
-                                            color: white;
-                                            font: 25px "Verdana";
-                                            border-radius: 10px;
-                                            }
+                                         """
+# BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
+#                                             border: 0px;
+#                                             color: white;
+#                                             font: 25px "Verdana";
+#                                             border-radius: 10px;
+#                                             }
 
-                                            QPushButton::hover {
-                                                background-color: #5a6677;
-                                            }
-                                        """
-CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
-                                            border: 0px;
-                                            background-color: #18202c;
-                                            font: 25px "Verdana";
-                                            border-radius: 10px;
-                                            }
+#                                             QPushButton::hover {
+#                                                 background-color: #5a6677;
+#                                             }
+#                                         """
+# CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
+#                                             border: 0px;
+#                                             background-color: #18202c;
+#                                             font: 25px "Verdana";
+#                                             border-radius: 10px;
+#                                             }
 
-                                            QPushButton::hover {
-                                                background-color: #18202c;
-                                            }
-                                        """
+#                                             QPushButton::hover {
+#                                                 background-color: #18202c;
+#                                             }
+#                                         """
 
 
 class MainWindow(Ui_MainWindow):
@@ -77,31 +77,6 @@ class MainWindow(Ui_MainWindow):
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
 
-    # @staticmethod
-    # def update_plugins_area_content(self):
-    #     y_move = 2
-    #     for name, version, image in sql.getPluginsList():
-    #         Plugin = QtWidgets.QWidget(self.plugins_area_content)
-    #         ui = Ui_Plugin()
-    #         ui.setupUi(Plugin)
-    #         try:
-    #             icon = QtGui.QPixmap(f"plugins/{name}/{image}")
-    #             ui.icon.setPixmap(icon)
-    #         except FileNotFoundError:
-    #             pass
-    #         ui.name.setText(name)
-    #         ui.version.setText(version)
-
-    #         Plugin.move(2, y_move)
-    #         y_move += Plugin.height() + 10
-    #         Plugin.show()
-
-    #         if Plugin.y() >= self.plugins_area_content.height():
-    #             self.plugins.setFixedWidth(
-    #                 self.plugins_area_content.width() + 5)
-    #             self.plugins_area_content.setFixedHeight(
-    #                 y_move + Plugin.height())
-
     def db_updating(self):
         while self.is_db_updating:
             sql.updateDB()
@@ -116,7 +91,7 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            #self.settings_btn.setStyleSheet(
+            # self.settings_btn.setStyleSheet(
             #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.whats_new_frame.raise_()
@@ -129,7 +104,7 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            #self.settings_btn.setStyleSheet(
+            # self.settings_btn.setStyleSheet(
             #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.eternal_arts_frame.raise_()
@@ -142,7 +117,7 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            #self.settings_btn.setStyleSheet(
+            # self.settings_btn.setStyleSheet(
             #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.credits_frame.raise_()
@@ -156,29 +131,29 @@ class MainWindow(Ui_MainWindow):
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(
                 CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            #self.settings_btn.setStyleSheet(
+            # self.settings_btn.setStyleSheet(
             #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.about_frame.raise_()
 
-        def show_settings_frame():
-            self.whats_new_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            #self.settings_btn.setStyleSheet(
-            #    CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+        # def show_settings_frame():
+        #     self.whats_new_btn.setStyleSheet(
+        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        #     self.eternal_arts_btn.setStyleSheet(
+        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        #     self.credits_btn.setStyleSheet(
+        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        #     self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+        #     # self.settings_btn.setStyleSheet(
+        #     #    CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
-            self.settings_frame.raise_()
+        #     self.settings_frame.raise_()
 
         self.whats_new_btn.clicked.connect(show_whats_new_frame)
         self.eternal_arts_btn.clicked.connect(show_eternal_arts_frame)
         self.credits_btn.clicked.connect(show_credits_frame)
         self.about_btn.clicked.connect(show_about_frame)
-        #self.settings_btn.clicked.connect(show_settings_frame)
+        # self.settings_btn.clicked.connect(show_settings_frame)
 
     def add_functions_to_left_menu_panel_buttons(self):
         self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)
@@ -195,7 +170,7 @@ class MainWindow(Ui_MainWindow):
             lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
 
         self.show_plugins_frame.raise_()
-        self.plugin_input.setText("")
+
         for widget in self.plugins_area_content.children():
             widget.setParent(None)
         y_move = 2
@@ -247,8 +222,8 @@ class MainWindow(Ui_MainWindow):
             BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
         self.credits_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
         self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-        self.settings_btn.setStyleSheet(
-            BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+        # self.settings_btn.setStyleSheet(
+        #     BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
 
 if __name__ == "__main__":

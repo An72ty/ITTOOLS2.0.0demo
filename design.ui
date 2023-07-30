@@ -352,14 +352,18 @@ font: 25px &quot;Verdana&quot;;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QFrame" name="show_plugins_frame">
+     <widget class="QFrame" name="any_eternal">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>641</width>
-        <height>576</height>
+        <x>30</x>
+        <y>30</y>
+        <width>341</width>
+        <height>111</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px dotted #214C87;
+background-color: #131C30;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -367,222 +371,6 @@ font: 25px &quot;Verdana&quot;;
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="frame_title">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>10</y>
-         <width>381</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ffffff;</string>
-       </property>
-       <property name="text">
-        <string>No your plugin here? Install it!</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="hint">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>50</y>
-         <width>431</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #47525E;</string>
-       </property>
-       <property name="text">
-        <string>Write &lt;devname&gt;\&lt;pluginname&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="plugin_input">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>90</y>
-         <width>260</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-size: 17px;
-	border-radius: 10px;
-}</string>
-       </property>
-       <property name="placeholderText">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QScrollArea" name="plugins">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>129</y>
-         <width>621</width>
-         <height>440</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QScrollArea {
-	border: none;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="widgetResizable">
-        <bool>true</bool>
-       </property>
-       <widget class="QWidget" name="plugins_area_content">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>621</width>
-          <height>440</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QPushButton" name="install">
-       <property name="geometry">
-        <rect>
-         <x>400</x>
-         <y>90</y>
-         <width>35</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	border: 0px;
-	color: white;
-	font: 25px &quot;Verdana&quot;;
-	border-radius: 10px;
-}
-
-QPushButton::hover {
-	background-color: #5a6677;
-}
-</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>images/icons/download.png</normaloff>images/icons/download.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QFrame" name="whats_new_frame">
-       <property name="geometry">
-        <rect>
-         <x>-10</x>
-         <y>-10</y>
-         <width>641</width>
-         <height>576</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QFrame" name="any_new">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>30</y>
-          <width>341</width>
-          <height>111</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QFrame {
-	border: 2px dotted #214C87;
-	background-color: #131C30;
-}
-QLabel {
-	color: white;
-	border: none;
-	font-size: 18px;
-}
-</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="label">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>281</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ITTOOLS 2.0.0 Global update!</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_2">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>321</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Added cool pyqt5 GUI to program!</string>
-         </property>
-        </widget>
-        <widget class="QFrame" name="any_eternal">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>341</width>
-           <height>111</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 2px dotted #214C87;
-background-color: #131C30;</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </widget>
-      </widget>
      </widget>
     </widget>
     <widget class="QFrame" name="credits_frame">
@@ -785,9 +573,223 @@ background-color: #131C30;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QFrame" name="whats_new_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>641</width>
+       <height>576</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QFrame" name="any_new">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>341</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	border: 2px dotted #214C87;
+	background-color: #131C30;
+}
+QLabel {
+	color: white;
+	border: none;
+	font-size: 18px;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>281</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ITTOOLS 2.0.0 Global update!</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>321</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Added cool PyQt5 GUI to program!</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="show_plugins_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>641</width>
+       <height>576</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="frame_title">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>381</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #ffffff;</string>
+      </property>
+      <property name="text">
+       <string>No your plugin here? Install it!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hint">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>50</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #47525E;</string>
+      </property>
+      <property name="text">
+       <string>Write &lt;devname&gt;\&lt;pluginname&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="plugin_input">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>90</y>
+        <width>260</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-size: 17px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="plugins">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>129</y>
+        <width>621</width>
+        <height>440</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QScrollArea {
+	border: none;
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="plugins_area_content">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>621</width>
+         <height>440</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="install">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>90</y>
+        <width>35</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: 0px;
+	color: white;
+	font: 25px &quot;Verdana&quot;;
+	border-radius: 10px;
+}
+
+QPushButton::hover {
+	background-color: #5a6677;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>images/icons/download.png</normaloff>images/icons/download.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
     <zorder>about_frame</zorder>
     <zorder>credits_frame</zorder>
     <zorder>eternal_arts_frame</zorder>
+    <zorder>show_plugins_frame</zorder>
+    <zorder>whats_new_frame</zorder>
    </widget>
    <widget class="QFrame" name="top_menu_panel">
     <property name="geometry">

@@ -8,6 +8,9 @@ class Main():
         if self.filename:
             with Image.open(self.filename) as self.img:
                 self.img.load()
+        else:
+            self.img = None
 
     def show(self):
-        self.img.show()
+        if self.img:
+            self.img.show()
