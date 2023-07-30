@@ -77,7 +77,125 @@ class MainWindow(Ui_MainWindow):
         self.add_functions_to_top_menu_panel_buttons()
         self.add_functions_to_left_menu_panel_buttons()
 
-    def update_plugins_area_content(self):
+    # @staticmethod
+    # def update_plugins_area_content(self):
+    #     y_move = 2
+    #     for name, version, image in sql.getPluginsList():
+    #         Plugin = QtWidgets.QWidget(self.plugins_area_content)
+    #         ui = Ui_Plugin()
+    #         ui.setupUi(Plugin)
+    #         try:
+    #             icon = QtGui.QPixmap(f"plugins/{name}/{image}")
+    #             ui.icon.setPixmap(icon)
+    #         except FileNotFoundError:
+    #             pass
+    #         ui.name.setText(name)
+    #         ui.version.setText(version)
+
+    #         Plugin.move(2, y_move)
+    #         y_move += Plugin.height() + 10
+    #         Plugin.show()
+
+    #         if Plugin.y() >= self.plugins_area_content.height():
+    #             self.plugins.setFixedWidth(
+    #                 self.plugins_area_content.width() + 5)
+    #             self.plugins_area_content.setFixedHeight(
+    #                 y_move + Plugin.height())
+
+    def db_updating(self):
+        while self.is_db_updating:
+            sql.updateDB()
+            time.sleep(1)
+
+    def add_functions_to_top_menu_panel_buttons(self):
+        def show_whats_new_frame():
+            self.whats_new_btn.setStyleSheet(
+                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.eternal_arts_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.credits_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            #self.settings_btn.setStyleSheet(
+            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+
+            self.whats_new_frame.raise_()
+
+        def show_eternal_arts_frame():
+            self.whats_new_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.eternal_arts_btn.setStyleSheet(
+                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.credits_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            #self.settings_btn.setStyleSheet(
+            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+
+            self.eternal_arts_frame.raise_()
+
+        def show_credits_frame():
+            self.whats_new_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.eternal_arts_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.credits_btn.setStyleSheet(
+                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            #self.settings_btn.setStyleSheet(
+            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+
+            self.credits_frame.raise_()
+
+        def show_about_frame():
+            self.whats_new_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.eternal_arts_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.credits_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.about_btn.setStyleSheet(
+                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            #self.settings_btn.setStyleSheet(
+            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+
+            self.about_frame.raise_()
+
+        def show_settings_frame():
+            self.whats_new_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.eternal_arts_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.credits_btn.setStyleSheet(
+                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
+            #self.settings_btn.setStyleSheet(
+            #    CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
+
+            self.settings_frame.raise_()
+
+        self.whats_new_btn.clicked.connect(show_whats_new_frame)
+        self.eternal_arts_btn.clicked.connect(show_eternal_arts_frame)
+        self.credits_btn.clicked.connect(show_credits_frame)
+        self.about_btn.clicked.connect(show_about_frame)
+        #self.settings_btn.clicked.connect(show_settings_frame)
+
+    def add_functions_to_left_menu_panel_buttons(self):
+        self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)
+        self.install_plugin_btn.clicked.connect(
+            self.show_install_plugin_dialog)
+        self.activate_plugin_btn.clicked.connect(
+            self.show_activate_plugin_dialog)
+        self.remove_plugin_btn.clicked.connect(self.show_remove_plugin_dialog)
+        self.exit_btn.clicked.connect(self.MainWindow.close)
+
+    def show_show_plugins_frame(self):
+        self.set_base_stylesheet_to_top_menu_panel_buttons()
+        self.install.clicked.connect(
+            lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
+
+        self.show_plugins_frame.raise_()
+        self.plugin_input.setText("")
         for widget in self.plugins_area_content.children():
             widget.setParent(None)
         y_move = 2
@@ -105,103 +223,6 @@ class MainWindow(Ui_MainWindow):
                     self.plugins_area_content.width() + 5)
                 self.plugins_area_content.setFixedHeight(
                     y_move + Plugin.height())
-
-    def db_updating(self):
-        while self.is_db_updating:
-            sql.updateDB()
-            # self.update_plugins_area_content()
-            time.sleep(1)
-
-    def add_functions_to_top_menu_panel_buttons(self):
-        def show_whats_new_frame():
-            self.whats_new_btn.setStyleSheet(
-                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.settings_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-            self.whats_new_frame.raise_()
-
-        def show_eternal_arts_frame():
-            self.whats_new_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.settings_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-            self.eternal_arts_frame.raise_()
-
-        def show_credits_frame():
-            self.whats_new_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.settings_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-            self.credits_frame.raise_()
-
-        def show_about_frame():
-            self.whats_new_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(
-                CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.settings_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-            self.about_frame.raise_()
-
-        def show_settings_frame():
-            self.whats_new_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.eternal_arts_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.credits_btn.setStyleSheet(
-                BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            self.settings_btn.setStyleSheet(
-                CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-            self.settings_frame.raise_()
-
-        self.whats_new_btn.clicked.connect(show_whats_new_frame)
-        self.eternal_arts_btn.clicked.connect(show_eternal_arts_frame)
-        self.credits_btn.clicked.connect(show_credits_frame)
-        self.about_btn.clicked.connect(show_about_frame)
-        self.settings_btn.clicked.connect(show_settings_frame)
-
-    def add_functions_to_left_menu_panel_buttons(self):
-        self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)
-        self.install_plugin_btn.clicked.connect(
-            self.show_install_plugin_dialog)
-        self.activate_plugin_btn.clicked.connect(
-            self.show_activate_plugin_dialog)
-        self.remove_plugin_btn.clicked.connect(self.show_remove_plugin_dialog)
-        self.exit_btn.clicked.connect(self.MainWindow.close)
-
-    def show_show_plugins_frame(self):
-        self.set_base_stylesheet_to_top_menu_panel_buttons()
-        self.install.clicked.connect(
-            lambda: install_plugin.Dialog.install_plugin(self.plugin_input.text(), self))
-
-        self.show_plugins_frame.raise_()
-
-        self.update_plugins_area_content()
 
     def show_install_plugin_dialog(self):
         self.set_base_stylesheet_to_top_menu_panel_buttons()
