@@ -352,24 +352,48 @@ font: 25px &quot;Verdana&quot;;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QFrame" name="any_eternal">
+     <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
-        <width>341</width>
-        <height>111</height>
+        <y>20</y>
+        <width>231</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 2px dotted #214C87;
-background-color: #131C30;</string>
+       <string notr="true">QLabel {
+	color: white;
+	border: none;
+	font-size: 25px;
+}
+</string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+      <property name="text">
+       <string>Eternal Arts Team</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>581</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+	border: none;
+	font-size: 18px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Eternal Arts is a small team of developer friends. 
+We make mostly free and useful programs.
+Organization on github - https://github.com/eternal-arts</string>
       </property>
      </widget>
     </widget>
@@ -786,10 +810,10 @@ QPushButton::hover {
      </widget>
     </widget>
     <zorder>about_frame</zorder>
-    <zorder>credits_frame</zorder>
-    <zorder>eternal_arts_frame</zorder>
     <zorder>show_plugins_frame</zorder>
     <zorder>whats_new_frame</zorder>
+    <zorder>credits_frame</zorder>
+    <zorder>eternal_arts_frame</zorder>
    </widget>
    <widget class="QFrame" name="top_menu_panel">
     <property name="geometry">
