@@ -7,6 +7,7 @@ import re
 import requests
 import os
 import zipfile
+import subprocess
 
 Window = None
 
@@ -62,6 +63,8 @@ class Dialog(Ui_Dialog):
                             f"https://raw.githubusercontent.com/{developerName}/{repName}/main/requirements.txt")
                         with open(f'plugins/{pluginName}/requirements.txt', 'wb') as file:
                             file.write(response.content)
+                        subprocess.run(["python", "-m", 'pip', 'install', '-r',
+                                       f'plugins/{pluginName}/requirements.txt'], stdout=subprocess.DEVNULL)
                     except:
                         pass
                     # Unpack zip
@@ -94,6 +97,8 @@ class Dialog(Ui_Dialog):
                             f"https://raw.githubusercontent.com/{developerName}/{repName}/main/requirements.txt")
                         with open(f'plugins/{pluginName}/requirements.txt', 'wb') as file:
                             file.write(response.content)
+                        subprocess.run(["python", "-m", 'pip', 'install', '-r',
+                                       f'plugins/{pluginName}/requirements.txt'], stdout=subprocess.DEVNULL)
                     except:
                         pass
                     # Unpack zip

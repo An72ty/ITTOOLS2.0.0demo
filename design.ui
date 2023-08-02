@@ -811,9 +811,9 @@ QPushButton::hover {
     </widget>
     <zorder>about_frame</zorder>
     <zorder>show_plugins_frame</zorder>
-    <zorder>whats_new_frame</zorder>
     <zorder>credits_frame</zorder>
     <zorder>eternal_arts_frame</zorder>
+    <zorder>whats_new_frame</zorder>
    </widget>
    <widget class="QFrame" name="top_menu_panel">
     <property name="geometry">
