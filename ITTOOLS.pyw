@@ -1,4 +1,9 @@
-from PyQt5 import QtWidgets, QtGui
+import os
+try:
+    from PyQt5 import QtWidgets, QtGui
+except:
+    os.system("pip install -r requirements.txt")
+    from PyQt5 import QtWidgets, QtGui
 from design import Ui_MainWindow
 from dialogs.install_plugin_dialog import install_plugin
 from dialogs.activate_plugin_dialog import activate_plugin
