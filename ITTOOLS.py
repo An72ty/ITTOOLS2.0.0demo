@@ -1,26 +1,14 @@
-import os
-try:
-    from PyQt5 import QtWidgets, QtGui
-except:
-    os.system("pip install -r requirements.txt")
-    from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui
 from design import Ui_MainWindow
 from dialogs.install_plugin_dialog import install_plugin
 from dialogs.activate_plugin_dialog import activate_plugin
 from dialogs.remove_plugin_dialog import remove_plugin
 from libs import sqlCoder as sql
 from widgets.plugin_design import Ui_Plugin
-from libs import network
 from dialogs.install_plugin_dialog import install_plugin
-import shutil
-import requests
-import zipfile
-import re
-import os
 import time
 import threading
 import sys
-
 
 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET = """QPushButton {
                                             border: 0px;
@@ -42,29 +30,6 @@ CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET = """QPushButton {
                                                 color: white;
                                             }
                                          """
-# BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
-#                                             border: 0px;
-#                                             color: white;
-#                                             font: 25px "Verdana";
-#                                             border-radius: 10px;
-#                                             }
-
-#                                             QPushButton::hover {
-#                                                 background-color: #5a6677;
-#                                             }
-#                                         """
-# CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET = """QPushButton {
-#                                             border: 0px;
-#                                             background-color: #18202c;
-#                                             font: 25px "Verdana";
-#                                             border-radius: 10px;
-#                                             }
-
-#                                             QPushButton::hover {
-#                                                 background-color: #18202c;
-#                                             }
-#                                         """
-
 
 class MainWindow(Ui_MainWindow):
     def __init__(self):
@@ -96,8 +61,6 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            # self.settings_btn.setStyleSheet(
-            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.whats_new_frame.raise_()
 
@@ -109,8 +72,6 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            # self.settings_btn.setStyleSheet(
-            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.eternal_arts_frame.raise_()
 
@@ -122,8 +83,6 @@ class MainWindow(Ui_MainWindow):
             self.credits_btn.setStyleSheet(
                 CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            # self.settings_btn.setStyleSheet(
-            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
 
             self.credits_frame.raise_()
 
@@ -136,29 +95,12 @@ class MainWindow(Ui_MainWindow):
                 BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
             self.about_btn.setStyleSheet(
                 CLICKED_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-            # self.settings_btn.setStyleSheet(
-            #    BASE_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
             self.about_frame.raise_()
-
-        # def show_settings_frame():
-        #     self.whats_new_btn.setStyleSheet(
-        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-        #     self.eternal_arts_btn.setStyleSheet(
-        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-        #     self.credits_btn.setStyleSheet(
-        #         BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-        #     self.about_btn.setStyleSheet(BASE_TOP_MENU_PANEL_BUTTON_STYLESHEET)
-        #     # self.settings_btn.setStyleSheet(
-        #     #    CLICKED_TOP_MENU_PANEL_SETTINGS_BUTTON_STYLESHEET)
-
-        #     self.settings_frame.raise_()
 
         self.whats_new_btn.clicked.connect(show_whats_new_frame)
         self.eternal_arts_btn.clicked.connect(show_eternal_arts_frame)
         self.credits_btn.clicked.connect(show_credits_frame)
         self.about_btn.clicked.connect(show_about_frame)
-        # self.settings_btn.clicked.connect(show_settings_frame)
 
     def add_functions_to_left_menu_panel_buttons(self):
         self.show_plugins_btn.clicked.connect(self.show_show_plugins_frame)

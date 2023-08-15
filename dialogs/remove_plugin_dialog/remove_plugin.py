@@ -27,11 +27,12 @@ class Dialog(Ui_Dialog):
 
     @staticmethod
     def remove_plugin(name: str, window, remove_plugin_dialog=None):
-        if exists(f'plugins/{name}'):
-            shutil.rmtree(f'plugins/{name}')
-            sql.updateDB()
-
-            window.show_show_plugins_frame()
-
-            if remove_plugin_dialog:
-                remove_plugin_dialog.Dialog.close()
+        if name:
+            if exists(f'plugins/{name}'):
+                shutil.rmtree(f'plugins/{name}')
+                sql.updateDB()
+    
+                window.show_show_plugins_frame()
+    
+                if remove_plugin_dialog:
+                    remove_plugin_dialog.Dialog.close()
